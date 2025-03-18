@@ -15,8 +15,9 @@ import { getProductById, getProducts } from "@/lib/products"
 
 interface ProductPageProps {
   params: {
-    id: string
-  }
+    id: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {

@@ -369,17 +369,7 @@ export function getProducts(): Product[] {
 
 // Update the getProductById function to be more robust
 export function getProductById(id: string): Product | undefined {
-  // Normalize the ID to handle different formats
-  const normalizedId = id.startsWith("") ? id : `${id}`
-
-  // Try to find the product with the normalized ID
-  let product = getProducts().find((product) => product.id === normalizedId)
-
-  // If not found, try with the original ID
-  if (!product) {
-    product = getProducts().find((product) => product.id === id)
-  }
-
-  return product
+  // Simply find the product with the matching ID
+  return getProducts().find((product) => product.id === id)
 }
 
